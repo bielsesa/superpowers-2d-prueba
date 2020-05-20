@@ -1,0 +1,79 @@
+{
+  "formatVersion": 3,
+  "maps": [
+    "map"
+  ],
+  "filtering": "pixelated",
+  "wrapping": "clampToEdge",
+  "pixelsPerUnit": 16,
+  "framesPerSecond": 20,
+  "opacity": null,
+  "alphaTest": 0.1,
+  "frameOrder": "rows",
+  "grid": {
+    "width": 32,
+    "height": 32
+  },
+  "origin": {
+    "x": 0,
+    "y": 0
+  },
+  "animations": [
+    {
+      "id": "0",
+      "name": "idle",
+      "startFrameIndex": 0,
+      "endFrameIndex": 10,
+      "speed": 1
+    },
+    {
+      "id": "1",
+      "name": "run",
+      "startFrameIndex": 12,
+      "endFrameIndex": 23,
+      "speed": 1
+    },
+    {
+      "id": "2",
+      "name": "hit",
+      "startFrameIndex": 24,
+      "endFrameIndex": 30,
+      "speed": 1
+    },
+    {
+      "id": "3",
+      "name": "double-jump",
+      "startFrameIndex": 36,
+      "endFrameIndex": 41,
+      "speed": 1
+    },
+    {
+      "id": "4",
+      "name": "jump",
+      "startFrameIndex": 48,
+      "endFrameIndex": 48,
+      "speed": 1
+    },
+    {
+      "id": "5",
+      "name": "fall",
+      "startFrameIndex": 49,
+      "endFrameIndex": 49,
+      "speed": 1
+    },
+    {
+      "id": "6",
+      "name": "wall-jump",
+      "startFrameIndex": 50,
+      "endFrameIndex": 54,
+      "speed": 1
+    }
+  ],
+  "mapSlots": {
+    "map": "map",
+    "light": null,
+    "specular": null,
+    "alpha": null,
+    "normal": null
+  }
+}

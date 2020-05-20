@@ -1,0 +1,76 @@
+{
+  "nextEntryId": 15,
+  "nodes": [
+    {
+      "id": "7",
+      "name": "GameScene",
+      "type": "scene"
+    },
+    {
+      "id": "1",
+      "name": "Sprites",
+      "type": null,
+      "children": [
+        {
+          "id": "2",
+          "name": "MainCharacter",
+          "type": "sprite"
+        },
+        {
+          "id": "13",
+          "name": "PigEnemy",
+          "type": "sprite"
+        },
+        {
+          "id": "14",
+          "name": "Platform",
+          "type": "sprite"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Maps",
+      "type": null,
+      "children": [
+        {
+          "id": "4",
+          "name": "TerrainTiles",
+          "type": "tileSet"
+        },
+        {
+          "id": "8",
+          "name": "BgTiles",
+          "type": "tileSet"
+        },
+        {
+          "id": "5",
+          "name": "MapDemo",
+          "type": "tileMap"
+        },
+        {
+          "id": "9",
+          "name": "BackgroundDemo",
+          "type": "tileMap"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Scripts",
+      "type": null,
+      "children": [
+        {
+          "id": "11",
+          "name": "Player",
+          "type": "script"
+        },
+        {
+          "id": "12",
+          "name": "Game",
+          "type": "script"
+        }
+      ]
+    }
+  ]
+}
