@@ -12,8 +12,28 @@
         {
           "name": "jumpSpeed",
           "type": "number"
+        },
+        {
+          "name": "hurt",
+          "type": "boolean"
+        },
+        {
+          "name": "attacking",
+          "type": "boolean"
         }
       ]
+    },
+    "EnemyBehavior": {
+      "scriptId": "17",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "BulletBehavior": {
+      "scriptId": "19",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
     }
   }
 }

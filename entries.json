@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 15,
+  "nextEntryId": 20,
   "nodes": [
     {
       "id": "7",
@@ -24,6 +24,11 @@
         {
           "id": "14",
           "name": "Platform",
+          "type": "sprite"
+        },
+        {
+          "id": "15",
+          "name": "Bullet",
           "type": "sprite"
         }
       ]
@@ -68,6 +73,16 @@
         {
           "id": "12",
           "name": "Game",
+          "type": "script"
+        },
+        {
+          "id": "17",
+          "name": "Enemy",
+          "type": "script"
+        },
+        {
+          "id": "19",
+          "name": "Bullet",
           "type": "script"
         }
       ]
