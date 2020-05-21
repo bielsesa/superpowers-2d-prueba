@@ -6,6 +6,10 @@
       "parentBehavior": null,
       "properties": [
         {
+          "name": "life",
+          "type": "number"
+        },
+        {
           "name": "speed",
           "type": "number"
         },
@@ -34,6 +38,17 @@
       "line": 0,
       "parentBehavior": null,
       "properties": []
+    },
+    "HUDBehavior": {
+      "scriptId": "22",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "numberOfLifes",
+          "type": "number"
+        }
+      ]
     }
   }
 }
