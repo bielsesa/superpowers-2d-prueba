@@ -123,7 +123,7 @@
                 }
               ],
               "position": {
-                "x": 1.7544786930084229,
+                "x": 2,
                 "y": 0,
                 "z": 0
               },
@@ -167,7 +167,7 @@
                 }
               ],
               "position": {
-                "x": 3.5089571475982666,
+                "x": 4,
                 "y": 0,
                 "z": 0
               },
@@ -189,8 +189,8 @@
           ],
           "components": [],
           "position": {
-            "x": 0,
-            "y": 0,
+            "x": -14,
+            "y": 8,
             "z": 0
           },
           "orientation": {
@@ -220,8 +220,8 @@
         }
       ],
       "position": {
-        "x": 1.5714857578277588,
-        "y": 16.607084274291992,
+        "x": 16,
+        "y": 9,
         "z": 3
       },
       "orientation": {
@@ -603,7 +603,7 @@
               "config": {
                 "formatVersion": 1,
                 "spriteAssetId": "23",
-                "animationId": null,
+                "animationId": "0",
                 "horizontalFlip": false,
                 "verticalFlip": false,
                 "castShadow": false,
@@ -662,9 +662,9 @@
       ],
       "components": [],
       "position": {
-        "x": 16.41952133178711,
-        "y": 9.583553314208984,
-        "z": 5
+        "x": 16.4,
+        "y": 9.5,
+        "z": 2
       },
       "orientation": {
         "x": 0,

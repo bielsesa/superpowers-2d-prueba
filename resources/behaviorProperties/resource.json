@@ -6,6 +6,10 @@
       "parentBehavior": null,
       "properties": [
         {
+          "name": "maxLives",
+          "type": "number"
+        },
+        {
           "name": "life",
           "type": "number"
         },

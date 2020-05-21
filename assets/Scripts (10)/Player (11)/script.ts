@@ -1,14 +1,26 @@
 class PlayerBehavior extends Sup.Behavior {
+  
+    //////////////////////////
+   /////// ATTRIBUTES ///////
+  //////////////////////////
+  maxLives: number = 3;
   life: number = 3;
   speed = 0.1;
   jumpSpeed = 0.45;
-  // states
+  
+    //////////////////////////
+   ///////// STATES /////////
+  //////////////////////////
   hurt: boolean = false;
   attacking: boolean = false;
   
+    ////////////////////
+   ////// BODIES //////
+  ////////////////////  
   solidBodies: Sup.ArcadePhysics2D.Body[] = [];
   platformBodies: Sup.ArcadePhysics2D.Body[] = [];
   enemyBodies: Sup.ArcadePhysics2D.Body[] = [];
+  collectiblesBodies: Sup.ArcadePhysics2D.Body[] = [];
   
   awake() {
     // We get and store all the bodies in two arrays, one for each group
@@ -19,6 +31,9 @@ class PlayerBehavior extends Sup.Behavior {
     let enemyActors = Sup.getActor("Enemies").getChildren();
     for (let enemyActor of enemyActors) this.enemyBodies.push(enemyActor.arcadeBody2D);
     Sup.log("no. of enemies: " + this.enemyBodies.length);
+    let collectiblesActors = Sup.getActor("Collectibles").getChildren();
+    for (let collectibleActor of collectiblesActors) this.collectiblesBodies.push(collectibleActor.arcadeBody2D);
+    Sup.log("no. of collectibles: " + this.collectiblesBodies.length);
   }
 
   update() {
@@ -61,10 +76,32 @@ class PlayerBehavior extends Sup.Behavior {
     for (let enemyBody of this.enemyBodies) {
       let enemyCollide = Sup.ArcadePhysics2D.intersects(this.actor.arcadeBody2D, enemyBody);
       if (enemyCollide) {
-        Sup.log("collided with an enemy");
-        touchEnemy = true;
-        this.hurt = true;        
+        Sup.log("collided with an enemy");        
+        if (this.life > 0) {
+          touchEnemy = true;
+          this.hurt = true;   
+        } else {
+          // respawn
+          //this.life--;
+          this.die();
+        }
         break;        
+      }
+    }
+    
+    // Then, check for collision with collectibles
+    let i = 0;
+    for (let collectibleBody of this.collectiblesBodies) {
+      i++;
+      let collectibleCollide = Sup.ArcadePhysics2D.intersects(this.actor.arcadeBody2D, collectibleBody);
+      if (collectibleCollide) {
+        Sup.log("collided with collectible");
+        if (this.life < this.maxLives) {
+          this.life++;
+          /*this.collectiblesBodies.splice(i, 1);
+          collectibleBody.destroy();*/
+        }
+        break;
       }
     }
 
@@ -93,26 +130,19 @@ class PlayerBehavior extends Sup.Behavior {
     // If the player is on the ground and wants to jump,
     // we update the `.y` component accordingly
     let touchBottom = this.actor.arcadeBody2D.getTouches().bottom;
-    if (touchEnemy) {      
-      if (this.life > 0) {
-          this.life--;          
-          velocity.y = 0; // it makes you fall (cuts a jump if there was any)
-          velocity.x = -this.speed; // it makes you go back 3 units (16x3 pixels)
-          let currentActorPosition = this.actor.getPosition();
-          this.actor.arcadeBody2D.warpPosition({ x: currentActorPosition.x - 3, y: currentActorPosition.y });
-          currentActorPosition = this.actor.getPosition();
+    if (touchEnemy) {
+        this.life--;          
+        velocity.y = 0; // it makes you fall (cuts a jump if there was any)
+        velocity.x = -this.speed; // it makes you go back 3 units (16x3 pixels)
+        let currentActorPosition = this.actor.getPosition();
+        this.actor.arcadeBody2D.warpPosition({ x: currentActorPosition.x - 3, y: currentActorPosition.y });
+        currentActorPosition = this.actor.getPosition();
 
-          this.actor.spriteRenderer.setAnimation("hit", false);
-          Sup.setTimeout(300, () => {
-            this.actor.spriteRenderer.setAnimation("idle");
-            this.hurt = false;
-          });        
-      } else {
-        // respawn
-        this.die();
-      }
-      
-      
+        this.actor.spriteRenderer.setAnimation("hit", false);
+        Sup.setTimeout(300, () => {
+          this.actor.spriteRenderer.setAnimation("idle");
+          this.hurt = false;
+        });    
     } else if (touchBottom && !this.hurt && !this.attacking) {
       if (Sup.Input.wasKeyJustPressed("UP")) {
         velocity.y = this.jumpSpeed;
@@ -157,10 +187,11 @@ class PlayerBehavior extends Sup.Behavior {
   die() {
     // for now, just reset position to the initial one
     // and life to the initial number ("respawn")
-    this.life = 3;
-    this.actor.arcadeBody2D.warpPosition({x: 2, y: 6});    
-    //this.actor.arcadeBody2D.setVelocity({x: 0, y: 0});
-  }
-  
+    this.life = this.maxLives;
+    this.actor.arcadeBody2D.warpPosition({x: 2, y: 8});
+    this.actor.arcadeBody2D.setVelocity({x: 0, y: 0});
+    this.hurt = false;
+    this.actor.spriteRenderer.setAnimation("idle");
+  }  
 }
 Sup.registerBehavior(PlayerBehavior);
