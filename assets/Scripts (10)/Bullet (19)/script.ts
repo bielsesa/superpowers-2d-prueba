@@ -1,11 +1,11 @@
 class BulletBehavior extends Sup.Behavior {
   
   playerActor: Sup.Actor;
-  enemyBodies: Sup.ArcadePhysics2D.Body[] = [];
+  //enemyBodies: Sup.ArcadePhysics2D.Body[] = [];
   
   start() {
-    this.playerActor = this.actor.getParent();
-    this.enemyBodies = this.playerActor.getBehavior(PlayerBehavior).getEnemyBodies();
+    this.playerActor = this.actor.getParent().getParent();
+    //this.enemyBodies = this.playerActor.getBehavior(PlayerBehavior).getEnemyBodies();
     this.actor.setPosition(this.playerActor.getPosition());
     this.actor.spriteRenderer = new Sup.SpriteRenderer(this.actor, "Sprites/Bullet");
     this.actor.arcadeBody2D = new Sup.ArcadePhysics2D.Body(this.actor, Sup.ArcadePhysics2D.BodyType.Box, {
@@ -24,8 +24,8 @@ class BulletBehavior extends Sup.Behavior {
     }    
     
     // get the enemies
-    let enemyActors = Sup.getActor("Enemies").getChildren();
-    for (let enemyActor of enemyActors) this.enemyBodies.push(enemyActor.arcadeBody2D);
+    //let enemyActors = Sup.getActor("Enemies").getChildren();
+    //for (let enemyActor of enemyActors) this.enemyBodies.push(enemyActor.arcadeBody2D);
     
     Sup.setTimeout(4000, () => {
       // If 4 seconds have passed, destroy bullet
@@ -34,6 +34,11 @@ class BulletBehavior extends Sup.Behavior {
   }
   
   update() {
+    
+    // CHECK THE COLLIDING INSIDE THE ENEMY'S BEHAVIOR
+    // INSTEAD OF HERE
+    
+    /*
     let i = 0;
     for (let enemyBody of this.enemyBodies) {
       i++;
@@ -46,6 +51,7 @@ class BulletBehavior extends Sup.Behavior {
         break;        
       }
     }
+    */
   }
 }
 Sup.registerBehavior(BulletBehavior);

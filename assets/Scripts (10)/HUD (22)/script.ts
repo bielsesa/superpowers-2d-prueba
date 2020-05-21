@@ -11,23 +11,6 @@ class HUDBehavior extends Sup.Behavior {
   update() {
     this.numberOfLifes = this.playerActor.getBehavior(PlayerBehavior).getPlayerLife();
     let playerLifeHUDCount = this.playerLife.getChildren().length;
-    Sup.log(`Number of lifes: ${this.numberOfLifes}`);
-
-    /*if (this.numberOfLifes < 0) {
-      let newHeart = new Sup.Actor(`Heart ${this.numberOfLifes}`);
-      newHeart.spriteRenderer = new Sup.SpriteRenderer(newHeart, "Sprites/Heart");
-      newHeart.setParent(this.playerLife);
-      newHeart.setPosition({x: 0, y: 0});      
-      
-      for (let i = 1; i < this.numberOfLifes; i++) {
-        newHeart = new Sup.Actor(`Heart ${this.numberOfLifes}`);
-        newHeart.spriteRenderer = new Sup.SpriteRenderer(newHeart, "Sprites/Heart");
-        newHeart.setParent(this.playerLife);
-        let newPosition = this.playerLife.getChildren()[playerLifeHUDCount - 1].getPosition();
-        newPosition.x = newPosition.x + 2;
-        newHeart.setPosition(newPosition);
-      }
-    } else */
       
     if (this.numberOfLifes < playerLifeHUDCount) {
       // player has lost a life, update hud (destroy one heart actor)
@@ -43,7 +26,6 @@ class HUDBehavior extends Sup.Behavior {
       let lastHeart = this.playerLife.getChildren()[playerLifeHUDCount - 1];      
       if (lastHeart === undefined) {
         newHeart.setPosition({x: 2, y: 16, z: 3});
-        //Sup.log(`PlayerLife position: ${this.playerLife.getPosition()}`);
       } else {
         let newPosition = lastHeart.getPosition();
         newPosition.x = newPosition.x + 2;

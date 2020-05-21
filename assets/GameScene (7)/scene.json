@@ -51,6 +51,47 @@
       "name": "HUD",
       "children": [
         {
+          "id": "21",
+          "name": "Instructions",
+          "children": [],
+          "components": [
+            {
+              "type": "TextRenderer",
+              "config": {
+                "formatVersion": 2,
+                "fontAssetId": "25",
+                "text": "Left and Right arrows to move\nUp arrow to jump\nX to shoot (crashes the game for now)\nif the game crashes, press F5",
+                "alignment": "left",
+                "verticalAlignment": "center",
+                "size": 20,
+                "color": "ffffff",
+                "overrideOpacity": true,
+                "opacity": 1
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": -7,
+            "y": 6.391168594360352,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
           "id": "14",
           "name": "PlayerLife",
           "children": [
@@ -191,6 +232,47 @@
           "position": {
             "x": -14,
             "y": 8,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "22",
+          "name": "FruitInstructions",
+          "children": [],
+          "components": [
+            {
+              "type": "TextRenderer",
+              "config": {
+                "formatVersion": 2,
+                "fontAssetId": "26",
+                "text": "Fruits heal you!",
+                "alignment": "center",
+                "verticalAlignment": "center",
+                "size": 21,
+                "color": null,
+                "overrideOpacity": false,
+                "opacity": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 11.939,
+            "y": 3.242,
             "z": 0
           },
           "orientation": {
@@ -637,11 +719,93 @@
                 "layersIndex": null
               },
               "id": "1"
+            },
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "CollectibleBehavior",
+                "propertyValues": {}
+              },
+              "id": "2"
             }
           ],
           "position": {
             "x": 2.0706024169921875,
             "y": -0.5690212249755859,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "20",
+          "name": "Fruit 2",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "formatVersion": 1,
+                "spriteAssetId": "23",
+                "animationId": "0",
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "0"
+            },
+            {
+              "type": "ArcadeBody2D",
+              "config": {
+                "formatVersion": 2,
+                "type": "box",
+                "movable": false,
+                "width": 1,
+                "height": 1,
+                "offset": {
+                  "x": 0,
+                  "y": 0
+                },
+                "bounce": {
+                  "x": 0,
+                  "y": 0
+                },
+                "tileMapAssetId": null,
+                "tileSetPropertyName": null,
+                "layersIndex": null
+              },
+              "id": "1"
+            },
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "CollectibleBehavior",
+                "propertyValues": {}
+              },
+              "id": "2"
+            }
+          ],
+          "position": {
+            "x": 11.459426879882812,
+            "y": 1.1266250610351562,
             "z": 0
           },
           "orientation": {
@@ -684,7 +848,33 @@
     {
       "id": "2",
       "name": "MainCharacter",
-      "children": [],
+      "children": [
+        {
+          "id": "23",
+          "name": "Bullets",
+          "children": [],
+          "components": [],
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        }
+      ],
       "components": [
         {
           "type": "SpriteRenderer",
