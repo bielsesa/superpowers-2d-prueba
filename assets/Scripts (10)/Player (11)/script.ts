@@ -92,10 +92,6 @@ class PlayerBehavior extends Sup.Behavior {
         try {
           for (let enemyBody of this.enemyBodies) {
             i++;
-            /*if (enemyBody === null || enemyBody === undefined) {
-              this.enemyBodies.splice(i, 1);
-              continue;
-            }*/
             let enemyCollide = Sup.ArcadePhysics2D.intersects(this.actor.arcadeBody2D, enemyBody);
             if (enemyCollide) {
               Sup.log("collided with an enemy");        
@@ -111,12 +107,9 @@ class PlayerBehavior extends Sup.Behavior {
           }
         } catch(err) {
           Sup.log("Error caught from PlayerBehavior");
-          //Sup.log(`Value of i: ${i}`);
-          //this.enemyBodies.splice(i, 1);
           this.enemyBodies = []; // reset
           let enemyActors = Sup.getActor("Enemies").getChildren();
           for (let enemyActor of enemyActors) this.enemyBodies.push(enemyActor.arcadeBody2D);
-          Sup.log(`Number of enemies: ${this.enemyBodies.length}`);
         }      
 
         // We override the `.x` component based on the player's input
