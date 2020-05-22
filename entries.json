@@ -1,11 +1,6 @@
 {
-  "nextEntryId": 29,
+  "nextEntryId": 33,
   "nodes": [
-    {
-      "id": "7",
-      "name": "GameScene",
-      "type": "scene"
-    },
     {
       "id": "1",
       "name": "Sprites",
@@ -14,6 +9,11 @@
         {
           "id": "2",
           "name": "MainCharacter",
+          "type": "sprite"
+        },
+        {
+          "id": "31",
+          "name": "MenuBackground",
           "type": "sprite"
         },
         {
@@ -104,6 +104,11 @@
           "id": "19",
           "name": "Bullet",
           "type": "script"
+        },
+        {
+          "id": "32",
+          "name": "StartGame",
+          "type": "script"
         }
       ]
     },
@@ -126,6 +131,23 @@
           "id": "28",
           "name": "Font2",
           "type": "font"
+        }
+      ]
+    },
+    {
+      "id": "29",
+      "name": "Scenes",
+      "type": null,
+      "children": [
+        {
+          "id": "7",
+          "name": "GameScene",
+          "type": "scene"
+        },
+        {
+          "id": "30",
+          "name": "InstructionsScene",
+          "type": "scene"
         }
       ]
     }

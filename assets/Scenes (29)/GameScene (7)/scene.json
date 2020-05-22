@@ -51,47 +51,6 @@
       "name": "HUD",
       "children": [
         {
-          "id": "21",
-          "name": "Instructions",
-          "children": [],
-          "components": [
-            {
-              "type": "TextRenderer",
-              "config": {
-                "formatVersion": 2,
-                "fontAssetId": "25",
-                "text": "Left and Right arrows to move\nUp arrow to jump\nX to shoot (crashes the game for now)\nif the game crashes, press F5",
-                "alignment": "left",
-                "verticalAlignment": "center",
-                "size": 20,
-                "color": "ffffff",
-                "overrideOpacity": true,
-                "opacity": 1
-              },
-              "id": "0"
-            }
-          ],
-          "position": {
-            "x": -7,
-            "y": 6.391168594360352,
-            "z": 0
-          },
-          "orientation": {
-            "x": 0,
-            "y": 0,
-            "z": 0,
-            "w": 1
-          },
-          "scale": {
-            "x": 1,
-            "y": 1,
-            "z": 1
-          },
-          "visible": true,
-          "layer": 0,
-          "prefab": null
-        },
-        {
           "id": "14",
           "name": "PlayerLife",
           "children": [
@@ -258,14 +217,14 @@
               "type": "TextRenderer",
               "config": {
                 "formatVersion": 2,
-                "fontAssetId": "26",
+                "fontAssetId": "25",
                 "text": "Fruits heal you!",
                 "alignment": "center",
                 "verticalAlignment": "center",
-                "size": 21,
+                "size": 15,
                 "color": null,
-                "overrideOpacity": false,
-                "opacity": null
+                "overrideOpacity": true,
+                "opacity": 1
               },
               "id": "0"
             }

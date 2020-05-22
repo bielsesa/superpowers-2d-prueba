@@ -24,20 +24,23 @@ class EnemyBehavior extends Sup.Behavior {
     if (bulletActors.length > 0) {
       // check if a bullet collides with the enemy     
       Sup.log("There exist bullets");
-      
-      let i = 0;
-      for (let bulletActor of bulletActors) {        
-        let bullet = bulletActor.arcadeBody2D;
-        i++;
-        if (bullet !== null && bullet !== undefined && Sup.ArcadePhysics2D.intersects(this.actor.arcadeBody2D, bullet)) {
-          // enemy intersected bullet, destroy both
-          // (or at least destroy enemy)
-          this.actor.destroy();
-          this.bulletBodies.slice(i, 1);
-          bulletActor.destroy();
-          Sup.log("Bullet collided with enemy");
+      try {
+        let i = 0;
+        for (let bulletActor of bulletActors) {        
+          let bullet = bulletActor.arcadeBody2D;
+          i++;
+          if (bullet !== null && bullet !== undefined && Sup.ArcadePhysics2D.intersects(this.actor.arcadeBody2D, bullet)) {
+            // enemy intersected bullet, destroy both
+            // (or at least destroy enemy)
+            this.actor.destroy();
+            this.bulletBodies.slice(i, 1);
+            bulletActor.destroy();
+            Sup.log("Bullet collided with enemy");
+          }
         }
-      }
+      } catch(err) {
+        Sup.log("Error caught from EnemyBehavior");
+      }      
     }    
   }
 }

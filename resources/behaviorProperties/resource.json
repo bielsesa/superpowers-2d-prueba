@@ -28,6 +28,10 @@
         {
           "name": "attacking",
           "type": "boolean"
+        },
+        {
+          "name": "doubleJump",
+          "type": "boolean"
         }
       ]
     },
@@ -61,6 +65,12 @@
     },
     "CollectibleBehavior": {
       "scriptId": "24",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "StartGame": {
+      "scriptId": "32",
       "line": 0,
       "parentBehavior": null,
       "properties": []

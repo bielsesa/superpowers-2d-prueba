@@ -116,7 +116,6 @@ class PlayerBehavior extends Sup.Behavior {
           this.enemyBodies = []; // reset
           let enemyActors = Sup.getActor("Enemies").getChildren();
           for (let enemyActor of enemyActors) this.enemyBodies.push(enemyActor.arcadeBody2D);
-          Sup.log(`Number of enemies: ${this.enemyBodies.length}`);
         }      
 
         // We override the `.x` component based on the player's input
