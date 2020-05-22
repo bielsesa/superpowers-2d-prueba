@@ -1,0 +1,1 @@
+Sup.ArcadePhysics2D.setGravity(0, -0.02);

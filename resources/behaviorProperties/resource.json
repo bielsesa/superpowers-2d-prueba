@@ -41,7 +41,12 @@
       "scriptId": "19",
       "line": 0,
       "parentBehavior": null,
-      "properties": []
+      "properties": [
+        {
+          "name": "horizontalSpeed",
+          "type": "number"
+        }
+      ]
     },
     "HUDBehavior": {
       "scriptId": "22",
