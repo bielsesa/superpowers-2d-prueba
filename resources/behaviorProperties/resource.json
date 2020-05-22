@@ -43,8 +43,8 @@
       "parentBehavior": null,
       "properties": [
         {
-          "name": "horizontalSpeed",
-          "type": "number"
+          "name": "mapSize",
+          "type": "any"
         }
       ]
     },

@@ -13,10 +13,13 @@ class HUDBehavior extends Sup.Behavior {
     let playerLifeHUDCount = this.playerLife.getChildren().length;
       
     if (this.numberOfLifes < playerLifeHUDCount) {
+      
       // player has lost a life, update hud (destroy one heart actor)
       this.playerLife.getChildren().pop().destroy();
       Sup.log("Player's life lower than HUD, popped and destroyed heart");
+      
     } else if (this.numberOfLifes > playerLifeHUDCount) {
+      
       // player has gained a life, update hud (add a new heart actor)
       let newHeart = new Sup.Actor(`Heart ${this.numberOfLifes}`);
       newHeart.spriteRenderer = new Sup.SpriteRenderer(newHeart, "Sprites/Heart");
@@ -33,6 +36,7 @@ class HUDBehavior extends Sup.Behavior {
       }
       
       Sup.log("Player's life greater than HUD, adding heart");
+      
     }
   }
 }

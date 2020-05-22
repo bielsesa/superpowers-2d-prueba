@@ -88,6 +88,7 @@ class PlayerBehavior extends Sup.Behavior {
         // Then, check for collision with enemies    
         let touchEnemy = false;
         for (let enemyBody of this.enemyBodies) {
+          if (enemyBody === null || enemyBody === undefined) continue; // check in case the enemy was destroyed at this point
           let enemyCollide = Sup.ArcadePhysics2D.intersects(this.actor.arcadeBody2D, enemyBody);
           if (enemyCollide) {
             Sup.log("collided with an enemy");        
